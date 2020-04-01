@@ -1,3 +1,44 @@
+# Test datasets
+*.data
+*.names
+*.tsv
+*.csv
+
+# Model files
+*.model
+
+# User-specific stuff:
+.idea/
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/dictionaries
+**/.idea/vcs.xml
+**/.idea/jsLibraryMappings.xml
+
+# Latex
+Report/comments.tex
+Report/results.tex
+Report/conclusion.tex
+Report/appendix.tex
+Report/bibliography.tex
+Report/main_BNN.aux
+Report/main_BNN.log
+Report/main_BNN.synctex.gz
+
+# Sensitive or high-churn files:
+**/.idea/dataSources.ids
+**/.idea/dataSources.xml
+**/.idea/dataSources.local.xml
+**/.idea/sqlDataSources.xml
+**/.idea/dynamic.xml
+**/.idea/uiDesigner.xml
+
+## File-based project format:
+*.iws
+
+# IntelliJ
+/out/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
