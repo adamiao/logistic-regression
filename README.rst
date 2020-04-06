@@ -13,15 +13,10 @@ My suggestion is to install this package within a python environment of your cho
 `conda <https://docs.conda.io/en/latest/>`_ package manager). This will allow you to integrate it with other projects
 you may be working on.
 
-If this is the route you decide to take, please read the `installation documentation <installation-documentation>`_.
+If this is the route you decide to take, please read the `installation documentation <https://github.com/adamiao/logistic-regression/blob/develop/docs/installation.rst>`_.
 
-.. _installation-documentation: https://github.com/adamiao/logistic-regression/blob/develop/docs/installation.rst
-
-If you're interested only in the heart of the algorithm, you may just use the code within `logistic_regression.py <logistic-regression-py>`_
+If you're interested only in the heart of the algorithm, you may just use the code within `logistic_regression.py <https://github.com/adamiao/logistic-regression/blob/develop/logistic_regression/utils/logistic_regression.py>`_
 and make the necessary adjustments.
-
-.. _logistic-regression-py: https://github.com/adamiao/logistic-regression/blob/develop/logistic_regression/utils/logistic_regression.py
-
 
 How to Use the CLI
 ==================
