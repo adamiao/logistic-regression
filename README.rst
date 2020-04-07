@@ -1,4 +1,4 @@
-.. contents:: **Table of Contents**
+.. contents:: **TABLE OF CONTENTS**
 .. section-numbering::
 
 Logistic Regression
