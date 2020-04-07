@@ -12,8 +12,8 @@ are as follows:
 
 from pathlib import Path
 from logistic_regression import LOGGER
-from logistic_regression.utils.data_utils import DataInput
-from logistic_regression.utils.logistic_regression import LogisticRegression
+from logistic_regression.data_utils import DataInput
+from logistic_regression.logistic_regression import LogisticRegression
 
 
 def main(filename=None, delimiter='\t', epochs=250, eta=0.1, eta_reg=0.001, test_size=0.25, seed=4):
