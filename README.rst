@@ -3,6 +3,7 @@
 
 Logistic Regression
 ===================
+
 The purpose of this project is to implement a *multinomial logistic regression* algorithm from scratch to get a better
 understanding of this numerical technique. This project is still under development.
 
@@ -13,15 +14,33 @@ My suggestion is to install this package within a python environment of your cho
 `conda <https://docs.conda.io/en/latest/>`_ package manager). This will allow you to integrate it with other projects
 you may be working on.
 
-If this is the route you decide to take, please read the `installation documentation <https://github.com/adamiao/logistic-regression/blob/develop/docs/installation.rst>`_.
+If this is the route you decide to take, please read the `installation documentation`__.
 
-If you're interested only in the heart of the algorithm, you may just use the code within `logistic_regression.py <https://github.com/adamiao/logistic-regression/blob/develop/logistic_regression/utils/logistic_regression.py>`_
+__ docs/installation.rst
+
+If you're interested only in the heart of the algorithm, you may just use the code within `logistic_regression.py`__
 and make the necessary adjustments.
+
+__ logistic_regression/logistic_regression.py
 
 How to Use the CLI
 ==================
 
-Under construction!
+Running the model on an input file
+----------------------------------
+
+If you're interested in using the logistic regression on a particular file that you have, ``filename.ext``, then all
+you need to do is run the following command:
+
+.. code-block:: powershell
+
+    logistic-regression -f 'relative/filepath/filename.ext' -d 'delimiter'
+
+Note that unless you have a tab delimited file, you must feed the ``delimiter`` option in the CLI command (e.g. ',' for
+comma delimited or '|' for pipe delimited files). Furthermore, it is important to keep in mind that you must use the
+relative file path from the location where you're calling the command from.
+
+Still under construction!
 
 References
 ==========
