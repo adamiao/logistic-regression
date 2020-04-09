@@ -19,9 +19,10 @@ If this is the route you decide to take, please read the `installation documenta
 __ docs/installation.rst
 
 If you're interested only in the heart of the algorithm, you may just use the code within `logistic_regression.py`__
-and make the necessary adjustments.
+and make the necessary adjustments. I have `one example`__ of how I personally have been using this tool.
 
 __ logistic_regression/logistic_regression.py
+__ docs/example_of_module_use.rst
 
 How to Use the CLI
 ==================
