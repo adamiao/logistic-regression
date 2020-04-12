@@ -10,14 +10,14 @@ LOGGER = logging.getLogger(__name__)
 
 class LogisticRegression:
 
-    def __init__(self, input_data, has_header=False):
+    def __init__(self, input_data, has_header=True):
         """
         Args:
             input_data: two-dimensional array (numpy or list of lists) where each row of points is of the form
                         [x_1, x_2, ..., x_m, category]. The array was started at `x_1` on purpose because later on a
                         term `x_0` = 1 will have to be added to multiply by the bias, `w_0`. The indexing used for the
                         training dataset is meant to match the indexing used for the weight vector.
-            has_header: boolean describing whether input data has a header row or not. It is defaulted to `False`.
+            has_header: boolean describing whether input data has a header row or not. It is defaulted to `True`.
         """
 
         self._instance_initialization(input_data, has_header)
@@ -174,13 +174,13 @@ class LogisticRegression:
 
         return classification, predictions, predicted_categories
 
-    def evaluate_performance(self, input_data, weights=None, has_header=False):
+    def evaluate_performance(self, input_data, weights=None, has_header=True):
         """
         This method will return the predictions and the confusion matrix for a testing dataset.
         Args:
             input_data: numpy array including the category as the last term for each row
             weights: weights matrix (numpy array)
-            has_header: boolean describing whether input data has a header row or not. It is defaulted to `False`.
+            has_header: boolean describing whether input data has a header row or not. It is defaulted to `True`.
 
         Returns:
             classification: numpy array where each row shows the chances of an input point belonging to one of the

@@ -101,6 +101,6 @@ class DataInput:
         # We find the row which splits the data and we break the input data at that point
         splitting_row = round(len(data_content) * test_size)
         testing_data, training_data = data_content[:splitting_row], data_content[splitting_row:]
-        testing_data, training_data = header + training_data, header + testing_data  # add the `header` back
+        testing_data, training_data = header + testing_data, header + training_data  # add the `header` back
 
         return training_data, testing_data

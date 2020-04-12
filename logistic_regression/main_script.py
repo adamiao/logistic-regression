@@ -2,10 +2,10 @@
 This main script will run the logistic regression model on some input dataset. The main parameters for this code to run
 are as follows:
 
-'epochs': (default value: 250)
+'epochs': (default value: 200)
 'eta': batch gradient descent learning parameter (default value: 0.1)
 'eta_reg': regularization learning parameter (default value: 0.001)
-'test_size': split percentage of training/testing (default value: 0.25)
+'test_size': split percentage of training/testing (default value: 0.1)
 'seed': used to always get the same shuffle pattern (default value: 4)
 
 """
@@ -16,7 +16,7 @@ from logistic_regression.data_utils import DataInput
 from logistic_regression.logistic_regression import LogisticRegression
 
 
-def main(filename=None, delimiter='\t', epochs=250, eta=0.1, eta_reg=0.001, test_size=0.25, seed=4):
+def main(filename=None, delimiter='\t', epochs=200, eta=0.1, eta_reg=0.001, test_size=0.1, seed=4):
 
     LOGGER.info(f'filename: {filename} | delimiter: "{delimiter}" | epochs: {epochs} | eta: {eta} | '
                 f'eta_reg: {eta_reg} | test_size: {test_size} | seed: {seed}')
@@ -40,4 +40,4 @@ def main(filename=None, delimiter='\t', epochs=250, eta=0.1, eta_reg=0.001, test
 
     # Checking performance of the converged model by looking at the `confusion matrix`
     *_, confusion_matrix = model.evaluate_performance(testing_data, w)
-    LOGGER.info(f'Confusion matrix: {confusion_matrix}')
+    LOGGER.info(f'Confusion matrix:\n{confusion_matrix}\n')
