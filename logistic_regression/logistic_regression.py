@@ -28,6 +28,12 @@ class LogisticRegression:
     ######################################
 
     def _instance_initialization(self, input_data, has_header):
+        """
+        This method initializes the class properties based on the input data (and whether it has headers or not).
+        Args:
+            input_data: please read `__init__`
+            has_header: please read `__init__`
+        """
 
         # First basic data preparation
         data, data_category, data_parameters = self._data_preparation(input_data, has_header)
@@ -148,7 +154,7 @@ class LogisticRegression:
             predictions: array of indices. These indices are related to the categories as specified by the object
                          `self.category_dictionary`. Usually it is an array with one object, but in case there are ties
                          in the prediction it will return more than one.
-            predicted_categories:
+            predicted_categories: list of predicted categories.
         """
 
         if weights is None:
