@@ -34,6 +34,7 @@ class LogisticRegression:
 
         # Creation of class properties
         self.category_dictionary = data_parameters.get('category_dictionary')
+        self.category_by_index = {val: key for key, val in self.category_dictionary.items()}
         self.n_categories = data_parameters.get('n_categories')  # number of distinct categories
         self.n = data_parameters.get('n')  # number of points in the training data
         self.m = data_parameters.get('m')  # dimension of the input data
@@ -58,7 +59,7 @@ class LogisticRegression:
             data_parameters: dictionary containing main information about the input data.
         """
 
-        # We will ignore the header from the `input_data`
+        # We will ignore the header from the `input_data` if input data has headers
         if has_header:
             input_data = input_data[1:]
 
@@ -145,7 +146,9 @@ class LogisticRegression:
             classification: numpy array where each row shows the chances of an input point belonging to one of the
                             categories. The rows do not necessarily add up to one.
             predictions: array of indices. These indices are related to the categories as specified by the object
-                         `self.category_dictionary`.
+                         `self.category_dictionary`. Usually it is an array with one object, but in case there are ties
+                         in the prediction it will return more than one.
+            predicted_categories:
         """
 
         if weights is None:
@@ -155,10 +158,15 @@ class LogisticRegression:
         data = np.array(input_data, dtype=float)
         data = np.insert(data, 0, 1.0, axis=1)
 
+        # Classification and prediction
         classification = 1.0 / (1.0 + np.exp(-np.matmul(data, weights.T)))
         predictions = np.argmax(classification, axis=1)
 
-        return classification, predictions
+        predicted_categories = []
+        for prediction in predictions:
+            predicted_categories.append(self.category_by_index.get(prediction))
+
+        return classification, predictions, predicted_categories
 
     def evaluate_performance(self, input_data, weights=None, has_header=False):
         """
